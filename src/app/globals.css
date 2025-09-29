@@ -1,26 +1,27 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.board-glow {
+  text-shadow:
+    0 0 6px rgba(0,255,102,.45),
+    0 0 18px rgba(0,255,102,.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.shadow-glow-success {
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.35);
+}
+.shadow-glow-info {
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.20);
+}
+.shadow-glow-error {
+  box-shadow: 0 0 24px rgba(239, 68, 68, 0.35);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root { color-scheme: dark; }
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,255,102,.35);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
